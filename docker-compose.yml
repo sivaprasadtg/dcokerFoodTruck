@@ -1,0 +1,21 @@
+version: "3.8"
+services:
+  menu:
+    build: ./foodtruck-menu
+    image: foodtruck-menu:local
+    container_name: foodtruck-menu
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+
+  order:
+    build: ./order-service
+    image: order-service:local
+    container_name: order-service
+    environment:
+      MENU_URL: http://menu:3000
+    ports:
+      - "4000:4000"
+    depends_on:
+      - menu
+    restart: unless-stopped
