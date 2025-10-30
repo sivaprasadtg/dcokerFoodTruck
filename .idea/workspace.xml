@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="72583b1e-9161-4550-aa2b-df7e13310821" name="Changes" comment="Remove .gitignore" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;sivaprasadtg&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/sivaprasadtg/dockingContainers.git&quot;,
+    &quot;accountId&quot;: &quot;5b5613ef-d709-4a86-985d-1f49b0680cb7&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="34l8GjOwVp8EWY4HyEKehAQjsL6" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/BTH/Sem2/PA2577 Tillämpad Cloud Computing och Big Data/Assignment1&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="72583b1e-9161-4550-aa2b-df7e13310821" name="Changes" comment="" />
+      <created>1761776703521</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1761776703521</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Update .gitignore">
+      <option name="closed" value="true" />
+      <created>1761819411022</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1761819411022</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Initial commit from my local repo">
+      <option name="closed" value="true" />
+      <created>1761820103447</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1761820103447</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Remove .gitignore">
+      <option name="closed" value="true" />
+      <created>1761820587027</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1761820587027</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Remove .gitignore">
+      <option name="closed" value="true" />
+      <created>1761820623430</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1761820623430</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Remove .idea folder and update .gitignore" />
+    <MESSAGE value="Update .gitignore" />
+    <MESSAGE value="Initial commit from my local repo" />
+    <MESSAGE value="Remove .gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove .gitignore" />
+  </component>
+</project>
