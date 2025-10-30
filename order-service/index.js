@@ -7,10 +7,15 @@ app.use(express.json());
 
 // Config
 const MENU_URL = process.env.MENU_URL || 'http://localhost:3000';
-const DATABASE_URL = process.env.DATABASE_URL || 'postgres://food:foodpw@localhost:5432/foodtruck';
 
 // Shared Postgres pool
-const pool = new Pool({ connectionString: DATABASE_URL });
+const pool = new Pool({
+  host: process.env.DB_HOST || 'localhost',
+  port: Number(process.env.DB_PORT || 5432),
+  user: process.env.DB_USER || 'food',
+  password: process.env.DB_PASSWORD || 'foodpw',
+  database: process.env.DB_NAME || 'foodtruck'
+});
 
 // helpers
 const pad = (n, width = 4) => String(n).padStart(width, '0');
@@ -125,7 +130,7 @@ app.get('/orders', async (req, res) => {
   }
 });
 
-// ---------- GET /orders/:id ----------
+// GET /orders/:id
 app.get('/orders/:id', async (req, res) => {
   try {
     const restCall4 = await pool.query('SELECT * FROM orders WHERE id = $1', [req.params.id]);
@@ -208,6 +213,8 @@ app.put('/orders/:id', async (req, res) => {
 app.get('/health', (_req, res) => res.json({ status: 'ok' }));
 
 const PORT = process.env.PORT || 4000;
-app.listen(PORT, () =>
-  console.log(`Order-service running on port ${PORT}, MENU_URL=${MENU_URL}, DATABASE_URL set=${!!DATABASE_URL}`));
-);
+app.listen(PORT, () => {
+  console.log(
+    `Order-service running on port ${PORT}, MENU_URL=${process.env.MENU_URL}, DB=${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`
+  );
+});

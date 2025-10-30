@@ -4,14 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72583b1e-9161-4550-aa2b-df7e13310821" name="Changes" comment="Update the services to use postgres">
-      <change afterPath="$PROJECT_DIR$/k8s/db-init-configmap.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/menu.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/namespace.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/order.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/postgres.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/secret-db.yaml" afterDir="false" />
+    <list default="true" id="72583b1e-9161-4550-aa2b-df7e13310821" name="Changes" comment="Add K8s config for DB, Menu and Order service">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodtruck-menu/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/foodtruck-menu/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k8s/menu.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/menu.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k8s/order.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/order.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k8s/postgres.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/postgres.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,12 +27,12 @@
     &quot;assignee&quot;: &quot;sivaprasadtg&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/sivaprasadtg/dockingContainers.git&quot;,
-    &quot;accountId&quot;: &quot;5b5613ef-d709-4a86-985d-1f49b0680cb7&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/sivaprasadtg/dcokerFoodTruck.git",
+    "accountId": "5b5613ef-d709-4a86-985d-1f49b0680cb7"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -46,9 +45,10 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "feature/setupK8",
+    "ignore.virus.scanning.warn.message": "true",
     "ignore_missing_gitignore": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/BTH/Sem2/PA2577 Tillämpad Cloud Computing och Big Data/Assignment1"
+    "last_opened_file_path": "D:/BTH/Sem2/PA2577 Tillämpad Cloud Computing och Big Data/Assignment1/order-service"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -92,7 +92,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761820623430</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Add K8s config for DB, Menu and Order service">
+      <option name="closed" value="true" />
+      <created>1761841215819</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1761841215819</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -100,6 +108,7 @@
     <MESSAGE value="Update .gitignore" />
     <MESSAGE value="Initial commit from my local repo" />
     <MESSAGE value="Remove .gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove .gitignore" />
+    <MESSAGE value="Add K8s config for DB, Menu and Order service" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add K8s config for DB, Menu and Order service" />
   </component>
 </project>

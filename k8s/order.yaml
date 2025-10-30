@@ -5,6 +5,8 @@ metadata:
   namespace: foodtruck
 spec:
   replicas: 1
+  strategy:
+    type: Recreate
   selector:
     matchLabels:
       app: order
@@ -15,7 +17,8 @@ spec:
     spec:
       containers:
         - name: order
-          image: sivaprasadtg/order-service:v1
+          image: sivaprasadtg/order-service:v5
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 4000
           env:
@@ -31,20 +34,30 @@ spec:
                 secretKeyRef:
                   name: db-secret
                   key: DB_PASSWORD
-            - name: DATABASE_URL
-              value: postgres://$(DB_USER):$(DB_PASSWORD)@postgres:5432/foodtruck
+            - name: DB_HOST
+              value: postgres
+            - name: DB_PORT
+              value: "5432"
+            - name: DB_NAME
+              value: foodtruck
           readinessProbe:
             httpGet:
               path: /health
               port: 4000
-            initialDelaySeconds: 5
+            initialDelaySeconds: 10
+            timeoutSeconds: 5
             periodSeconds: 5
+            failureThreshold: 6
           livenessProbe:
             httpGet:
               path: /health
               port: 4000
-            initialDelaySeconds: 10
+            initialDelaySeconds: 20
+            timeoutSeconds: 5
             periodSeconds: 10
+            failureThreshold: 3
+
+
 ---
 apiVersion: v1
 kind: Service
