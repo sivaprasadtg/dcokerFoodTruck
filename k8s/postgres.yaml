@@ -6,12 +6,12 @@ metadata:
   labels:
     app: postgres
 spec:
-  ports:
-    - port: 5432
-      name: psql
   clusterIP: None
   selector:
     app: postgres
+  ports:
+    - port: 5432
+      name: psql
 ---
 apiVersion: apps/v1
 kind: StatefulSet
@@ -58,6 +58,10 @@ spec:
               command: ["pg_isready","-U","food","-d","foodtruck"]
             initialDelaySeconds: 10
             periodSeconds: 5
+      volumes:
+        - name: init-sql
+          configMap:
+            name: db-init
   volumeClaimTemplates:
     - metadata:
         name: pgdata
@@ -66,12 +70,3 @@ spec:
         resources:
           requests:
             storage: 5Gi
----
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: db-init
-  namespace: foodtruck
-data:
-  # dummy key to ensure the ConfigMap exists even if applied before db-init-configmap.yaml
-  placeholder: "replace by k8s/db-init-configmap.yaml (separate file)"

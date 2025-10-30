@@ -16,6 +16,7 @@ spec:
       containers:
         - name: menu
           image: sivaprasadtg/foodtruck-menu:v1
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 3000
           env:
@@ -27,10 +28,14 @@ spec:
             - name: DB_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: DB_PASSWORD
+                  name: db-secret
                   key: DB_PASSWORD
-            - name: DATABASE_URL
-              value: postgres://$(DB_USER):$(DB_PASSWORD)@postgres:5432/foodtruck
+            - name: DB_HOST
+              value: postgres
+            - name: DB_PORT
+              value: "5432"
+            - name: DB_NAME
+              value: foodtruck
           readinessProbe:
             httpGet:
               path: /health

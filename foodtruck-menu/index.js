@@ -4,13 +4,16 @@ const { v4: uuidv4 } = require('uuid');
 const { Pool } = require('pg');
 
 const app = express();
-
-// parse JSON bodies
 app.use(express.json());
 
-// ---- Configuration ----
-const DATABASE_URL = process.env.DATABASE_URL || 'postgres://food:foodpw@localhost:5432/foodtruck';
-const pool = new Pool({ connectionString: DATABASE_URL });
+// Configuration
+const pool = new Pool({
+  host: process.env.DB_HOST || 'localhost',
+  port: Number(process.env.DB_PORT || 5432),
+  user: process.env.DB_USER || 'food',
+  password: process.env.DB_PASSWORD || 'foodpw',
+  database: process.env.DB_NAME || 'foodtruck'
+});
 
 // simple request logger to see incoming method & path
 app.use((req, res, next) => {
@@ -102,10 +105,11 @@ app.delete('/menu/:id', async (req, res) => {
   }
 });
 
-
 // health
-app.get('/health', (req, res) => res.json({ status: 'ok' }));
+app.get('/health', (_req, res) => res.json({ status: 'ok' }));
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Menu-service running on port ${PORT}`));
+const PORT = process.env.PORT || 4000;
+app.listen(PORT, () =>
+  console.log(`Order-service running on port ${PORT}, MENU_URL=${MENU_URL}`)
+);
 );
