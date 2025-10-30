@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: menu
-          image: sivaprasadtg/foodtruck-menu:v1
+          image: sivaprasadtg/foodtruck-menu:v10
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 3000
