@@ -106,10 +106,12 @@ app.delete('/menu/:id', async (req, res) => {
 });
 
 // health
-app.get('/health', (_req, res) => res.json({ status: 'ok' }));
+//app.get('/health', (_req, res) => res.json({ status: 'ok' }));
+app.get('/health', (_req, res) => res.sendStatus(200));
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 3000;
+const MENU_URL = process.env.MENU_URL || 'http://menu:3000';
+
 app.listen(PORT, () =>
-  console.log(`Order-service running on port ${PORT}, MENU_URL=${MENU_URL}`)
-);
+  console.log(`Foodtruck-menu(service) running on port ${PORT}, MENU_URL=${MENU_URL}`)
 );

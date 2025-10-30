@@ -210,7 +210,8 @@ app.put('/orders/:id', async (req, res) => {
 });
 
 // health
-app.get('/health', (_req, res) => res.json({ status: 'ok' }));
+//app.get('/health', (_req, res) => res.json({ status: 'ok' }));
+app.get('/health', (_req, res) => res.sendStatus(200));
 
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {

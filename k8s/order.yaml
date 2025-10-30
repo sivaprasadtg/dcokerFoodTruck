@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: order
-          image: sivaprasadtg/order-service:v5
+          image: sivaprasadtg/order-service:v7
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 4000
