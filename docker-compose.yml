@@ -1,11 +1,14 @@
-version: "3.8"
 services:
   menu:
     build: ./foodtruck-menu
     image: foodtruck-menu:local
     container_name: foodtruck-menu
+    environment:
+      DATABASE_URL: postgres://food:foodpw@db:5432/foodtruck
     ports:
       - "3000:3000"
+    depends_on:
+      - db
     restart: unless-stopped
 
   order:
@@ -14,8 +17,27 @@ services:
     container_name: order-service
     environment:
       MENU_URL: http://menu:3000
+      DATABASE_URL: postgres://food:foodpw@db:5432/foodtruck
     ports:
       - "4000:4000"
     depends_on:
       - menu
+      - db
     restart: unless-stopped
+
+  db:
+    image: postgres:18
+    container_name: foodtruck-db
+    environment:
+      POSTGRES_USER: food
+      POSTGRES_PASSWORD: foodpw
+      POSTGRES_DB: foodtruck
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql
+      - ./db-init:/docker-entrypoint-initdb.d:ro
+    restart: unless-stopped
+
+volumes:
+  pgdata: {}

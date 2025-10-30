@@ -4,7 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72583b1e-9161-4550-aa2b-df7e13310821" name="Changes" comment="Remove .gitignore" />
+    <list default="true" id="72583b1e-9161-4550-aa2b-df7e13310821" name="Changes" comment="Remove .gitignore">
+      <change afterPath="$PROJECT_DIR$/db-init/init.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodtruck-menu/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/foodtruck-menu/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodtruck-menu/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/foodtruck-menu/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodtruck-menu/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/foodtruck-menu/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodtruck-menu/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/foodtruck-menu/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/package.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,14 +46,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/BTH/Sem2/PA2577 Tillämpad Cloud Computing och Big Data/Assignment1&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "feature/addDB",
+    "ignore_missing_gitignore": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/BTH/Sem2/PA2577 Tillämpad Cloud Computing och Big Data/Assignment1"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
