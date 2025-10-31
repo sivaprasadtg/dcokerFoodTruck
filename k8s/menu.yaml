@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: menu
-          image: sivaprasadtg/foodtruck-menu:v11
+          image: sivaprasadtg/foodtruck-menu:v12
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 3000
@@ -55,6 +55,7 @@ spec:
             limits:
               cpu: 500m
               memory: 256Mi
+
 ---
 apiVersion: v1
 kind: Service

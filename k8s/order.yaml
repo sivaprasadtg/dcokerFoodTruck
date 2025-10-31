@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: order
-          image: sivaprasadtg/order-service:v7
+          image: sivaprasadtg/order-service:v8
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 4000
@@ -63,7 +63,6 @@ spec:
             limits:
               cpu: 500m
               memory: 256Mi
-
 
 ---
 apiVersion: v1

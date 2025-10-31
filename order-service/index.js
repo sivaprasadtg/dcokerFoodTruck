@@ -17,6 +17,9 @@ const pool = new Pool({
   database: process.env.DB_NAME || 'foodtruck'
 });
 
+// health
+app.get('/orders/health', (_req, res) => res.sendStatus(200));
+
 // helpers
 const pad = (n, width = 4) => String(n).padStart(width, '0');
 const todayKey = () => {
@@ -208,9 +211,6 @@ app.put('/orders/:id', async (req, res) => {
     return res.status(500).json({ error: 'Internal error' });
   }
 });
-
-// health
-app.get('orders/health', (_req, res) => res.sendStatus(200));
 
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {

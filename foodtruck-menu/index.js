@@ -21,6 +21,9 @@ app.use((req, res, next) => {
   next();
 });
 
+// health
+app.get('/menu/health', (_req, res) => res.sendStatus(200));
+
 // List menu
 app.get('/menu', async (_req, res) => {
   try {
@@ -104,9 +107,6 @@ app.delete('/menu/:id', async (req, res) => {
     res.status(500).json({ error: 'Internal server error.' });
   }
 });
-
-// health
-app.get('menu/health', (_req, res) => res.sendStatus(200));
 
 const PORT = process.env.PORT || 3000;
 const MENU_URL = process.env.MENU_URL || 'http://menu:3000';
