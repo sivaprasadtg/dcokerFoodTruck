@@ -42,17 +42,17 @@ spec:
               value: foodtruck
           readinessProbe:
             httpGet:
-              path: /health
+              path: /orders/health
               port: 4000
-            initialDelaySeconds: 10
+            initialDelaySeconds: 15
             timeoutSeconds: 5
             periodSeconds: 5
             failureThreshold: 6
           livenessProbe:
             httpGet:
-              path: /health
+              path: /orders/health
               port: 4000
-            initialDelaySeconds: 20
+            initialDelaySeconds: 30
             timeoutSeconds: 5
             periodSeconds: 10
             failureThreshold: 3

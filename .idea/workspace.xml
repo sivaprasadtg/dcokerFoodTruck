@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72583b1e-9161-4550-aa2b-df7e13310821" name="Changes" comment="Remove unnecessary ) from index files and redeploy services">
-      <change afterPath="$PROJECT_DIR$/k8s/ingress.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/networkpolicy-db.yaml" afterDir="false" />
+    <list default="true" id="72583b1e-9161-4550-aa2b-df7e13310821" name="Changes" comment="Add networkpolicy for db and ingress controller to enfore access routs and avoid port forwarding">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodtruck-menu/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/foodtruck-menu/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k8s/ingress.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/ingress.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/k8s/menu.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/menu.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/k8s/order.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/order.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +122,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761865606530</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Add networkpolicy for db and ingress controller to enfore access routs and avoid port forwarding">
+      <option name="closed" value="true" />
+      <created>1761919942971</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1761919942971</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -132,6 +141,7 @@
     <MESSAGE value="Add K8s config for DB, Menu and Order service" />
     <MESSAGE value="Add back deleted .idea files to get project view correct in the IDE" />
     <MESSAGE value="Remove unnecessary ) from index files and redeploy services" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove unnecessary ) from index files and redeploy services" />
+    <MESSAGE value="Add networkpolicy for db and ingress controller to enfore access routs and avoid port forwarding" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add networkpolicy for db and ingress controller to enfore access routs and avoid port forwarding" />
   </component>
 </project>
