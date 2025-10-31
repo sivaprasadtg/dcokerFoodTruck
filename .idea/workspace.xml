@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72583b1e-9161-4550-aa2b-df7e13310821" name="Changes" comment="Add networkpolicy for db and ingress controller to enfore access routs and avoid port forwarding">
+    <list default="true" id="72583b1e-9161-4550-aa2b-df7e13310821" name="Changes" comment="Fix app to be reachable via foodtruck.local">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/foodtruck-menu/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/foodtruck-menu/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/k8s/ingress.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/ingress.yaml" afterDir="false" />
@@ -130,7 +130,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761919942971</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Fix app to be reachable via foodtruck.local">
+      <option name="closed" value="true" />
+      <created>1761932117954</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1761932117954</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -142,6 +150,7 @@
     <MESSAGE value="Add back deleted .idea files to get project view correct in the IDE" />
     <MESSAGE value="Remove unnecessary ) from index files and redeploy services" />
     <MESSAGE value="Add networkpolicy for db and ingress controller to enfore access routs and avoid port forwarding" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add networkpolicy for db and ingress controller to enfore access routs and avoid port forwarding" />
+    <MESSAGE value="Fix app to be reachable via foodtruck.local" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix app to be reachable via foodtruck.local" />
   </component>
 </project>
