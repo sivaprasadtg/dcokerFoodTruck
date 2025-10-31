@@ -106,8 +106,7 @@ app.delete('/menu/:id', async (req, res) => {
 });
 
 // health
-//app.get('/health', (_req, res) => res.json({ status: 'ok' }));
-app.get('/health', (_req, res) => res.sendStatus(200));
+app.get('menu/health', (_req, res) => res.sendStatus(200));
 
 const PORT = process.env.PORT || 3000;
 const MENU_URL = process.env.MENU_URL || 'http://menu:3000';

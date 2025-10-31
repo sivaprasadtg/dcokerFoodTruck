@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: menu
-          image: sivaprasadtg/foodtruck-menu:v10
+          image: sivaprasadtg/foodtruck-menu:v11
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 3000
@@ -38,15 +38,15 @@ spec:
               value: foodtruck
           readinessProbe:
             httpGet:
-              path: /health
+              path: /menu/health
               port: 3000
-            initialDelaySeconds: 5
+            initialDelaySeconds: 15
             periodSeconds: 5
           livenessProbe:
             httpGet:
-              path: /health
+              path: /menu/health
               port: 3000
-            initialDelaySeconds: 10
+            initialDelaySeconds: 30
             periodSeconds: 10
           resources:
             requests:
