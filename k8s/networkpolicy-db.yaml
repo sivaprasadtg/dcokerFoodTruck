@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-db-from-apps
+  namespace: foodtruck
+spec:
+  podSelector:
+    matchLabels: { app: postgres }
+  policyTypes: [Ingress]
+  ingress:
+    - from:
+        - podSelector: { matchLabels: { app: menu } }
+        - podSelector: { matchLabels: { app: order } }
+      ports:
+        - protocol: TCP
+          port: 5432
