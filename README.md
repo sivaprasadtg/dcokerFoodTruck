@@ -95,6 +95,6 @@ With an idea of replicas being at least 1 and maximum 5:
 ```kubectl autoscale deployment menu -n foodtruck --cpu-percent=80 --min=1 --max=5```  
 ```kubectl autoscale deployment order -n foodtruck --cpu-percent=80 --min=1 --max=5```
 
-### Verify status for everythingi in the namespace
+### Verify status for everything in the namespace
 ```kubectl get pods,svc,hpa -n foodtruck```
 
