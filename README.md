@@ -98,3 +98,5 @@ With an idea of replicas being at least 1 and maximum 5:
 ### Verify status for everything in the namespace
 ```kubectl get pods,svc,hpa -n foodtruck```
 
+## Clean up after everything
+```kubectl delete ns foodtruck```
