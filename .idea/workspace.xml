@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72583b1e-9161-4550-aa2b-df7e13310821" name="Changes" comment="Simplify ingress and move health endpoint in the node file higher">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/db-init-configmap.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/db-init-configmap.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/postgres.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/postgres.yaml" afterDir="false" />
-    </list>
+    <list default="true" id="72583b1e-9161-4550-aa2b-df7e13310821" name="Changes" comment="Simplify ingress and move health endpoint in the node file higher" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,7 +38,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "feature/setupScaling",
+    "git-widget-placeholder": "feature/addReadme",
     "ignore.virus.scanning.warn.message": "true",
     "ignore_missing_gitignore": "true",
     "kotlin-language-version-configured": "true",
