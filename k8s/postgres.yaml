@@ -29,6 +29,9 @@ spec:
       labels:
         app: postgres
     spec:
+      # (optional but recommended) make volume perms friendly to postgres user (UID 999)
+      securityContext:
+        fsGroup: 999
       containers:
         - name: db
           image: postgres:18
@@ -55,9 +58,21 @@ spec:
               mountPath: /docker-entrypoint-initdb.d
           readinessProbe:
             exec:
-              command: ["pg_isready","-U","food","-d","foodtruck"]
+              command: [ "sh", "-c", "pg_isready -U \"$POSTGRES_USER\" -d \"$POSTGRES_DB\"" ]
             initialDelaySeconds: 10
             periodSeconds: 5
+          livenessProbe:
+            exec:
+              command: [ "sh", "-c", "pg_isready -U \"$POSTGRES_USER\" -d \"$POSTGRES_DB\"" ]
+            initialDelaySeconds: 20
+            periodSeconds: 10
+          resources:
+            requests:
+              cpu: 100m
+              memory: 256Mi
+            limits:
+              cpu: 1
+              memory: 1Gi
       volumes:
         - name: init-sql
           configMap:
