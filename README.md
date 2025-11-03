@@ -79,7 +79,8 @@ Verify ingress in the namespace:
 ## For accessing app outside the K8s with a better host name
 ### Add this line to your system hosts file 
 - (C:\Windows\System32\drivers\etc\hosts on Windows):  
-```127.0.0.1 foodtruck.local```
+```127.0.0.1 foodtruck.local```  
+Use ```kubectl get svc -n ingress-nginx``` to verify external-IP of the ingress service is mapped to localhost or 127.0.0.1.
 
 ### Visit the services via browser or Postman:
 
