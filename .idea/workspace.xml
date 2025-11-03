@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72583b1e-9161-4550-aa2b-df7e13310821" name="Changes" comment="Simplify ingress and move health endpoint in the node file higher" />
+    <list default="true" id="72583b1e-9161-4550-aa2b-df7e13310821" name="Changes" comment="Add README.md">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,11 +41,11 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "feature/addReadme",
+    "git-widget-placeholder": "feature/udpateDockercompose",
     "ignore.virus.scanning.warn.message": "true",
     "ignore_missing_gitignore": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/BTH/Sem2/PA2577 Tillämpad Cloud Computing och Big Data/Assignment1/.idea"
+    "last_opened_file_path": "D:/BTH/Sem2/PA2577 Tillämpad Cloud Computing och Big Data/Assignment1"
   }
 }]]></component>
   <component name="RecentsManager">
