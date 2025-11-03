@@ -73,7 +73,10 @@ You should see 3 pods up and ready (1/1).
 ```kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/cloud/deploy.yaml```  
 ```kubectl apply -n foodtruck -f k8s\ingress.yaml```
 
-## For accessing app outside the K8s without port forwarding
+Verify ingress in the namespace:  
+```kubectl get ingress -n foodtruck```
+
+## For accessing app outside the K8s with a better host name
 ### Add this line to your system hosts file 
 - (C:\Windows\System32\drivers\etc\hosts on Windows):  
 ```127.0.0.1 foodtruck.local```
@@ -86,6 +89,11 @@ You should see 3 pods up and ready (1/1).
 | `http://foodtruck.local/orders`        | Order service |
 | `http://foodtruck.local/menu/health`   | Health check  |
 | `http://foodtruck.local/orders/health` | Health check  |
+
+
+## Security: Using networkpolicy
+As an additional measure to not allow anything but the 2 microservices to access the DB, a policy is defined in this yaml which when applied prevents un-allowed access.  
+```kubectl apply -n foodtruck -f k8s\networkpolicy-db.yaml```  
 
 ## Horizontal Pod Autoscaling (HPA)  
 To demonstrate dynamic scaling in Kubernetes, Horizontal Pod Autoscalers are defined for both microservices - menu and order.
