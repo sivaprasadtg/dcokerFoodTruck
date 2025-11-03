@@ -69,8 +69,9 @@ Wait until the pod postgres-0 is Running and 1/1 Ready.
 
 You should see 3 pods up and ready (1/1).
 
-### If ingress is not enabled, install NGINX Ingress Controller:
-```kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/cloud/deploy.yaml```
+### If ingress is not enabled, install and apply NGINX Ingress Controller
+```kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/cloud/deploy.yaml```  
+```kubectl apply -n foodtruck -f k8s\ingress.yaml```
 
 ## For accessing app outside the K8s without port forwarding
 ### Add this line to your system hosts file 
