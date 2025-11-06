@@ -1,6 +1,6 @@
 services:
   menu:
-    build: ./foodtruck-menu
+    build: src/foodtruck-menu
     image: foodtruck-menu:local
     container_name: foodtruck-menu
     environment:
@@ -16,7 +16,7 @@ services:
     restart: unless-stopped
 
   order:
-    build: ./order-service
+    build: src/order-service
     image: order-service:local
     container_name: order-service
     environment:

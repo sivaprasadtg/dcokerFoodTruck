@@ -29,7 +29,6 @@ spec:
       labels:
         app: postgres
     spec:
-      # (optional but recommended) make volume perms friendly to postgres user (UID 999)
       securityContext:
         fsGroup: 999
       containers:

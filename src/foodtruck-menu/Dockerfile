@@ -2,7 +2,7 @@
 FROM node:18-alpine
 
 # Create and use app directory
-WORKDIR /app
+WORKDIR /app/src
 
 # Copy only package files first (better caching)
 COPY package*.json ./
@@ -11,7 +11,7 @@ COPY package*.json ./
 RUN npm ci --omit=dev
 
 # Copy the rest of the source code
-COPY . .
+COPY . /app
 
 # Use a non-root user for security
 RUN addgroup -S app && adduser -S app -G app
