@@ -1,13 +1,15 @@
 services:
   menu:
-    build: src/foodtruck-menu
-    image: foodtruck-menu:local
-    container_name: foodtruck-menu
+    build: src/menu-service
+    env_file:
+      - src/menu-service/.env
+    image: menu-service:local
+    container_name: menu-service
     environment:
       DB_HOST: db
       DB_PORT: "5432"
-      DB_USER: food
-      DB_PASSWORD: foodpw
+      DB_USER: <TBD>
+      DB_PASSWORD: <TBD>
       DB_NAME: foodtruck
     ports:
       - "3000:3000"
@@ -17,14 +19,16 @@ services:
 
   order:
     build: src/order-service
+    env_file:
+      - src/order-service/.env
     image: order-service:local
     container_name: order-service
     environment:
       MENU_URL: http://menu:3000
       DB_HOST: db
       DB_PORT: "5432"
-      DB_USER: food
-      DB_PASSWORD: foodpw
+      DB_USER: <TBD>
+      DB_PASSWORD: <TBD>
       DB_NAME: foodtruck
     ports:
       - "4000:4000"
@@ -37,8 +41,8 @@ services:
     image: postgres:18
     container_name: foodtruck-db
     environment:
-      POSTGRES_USER: food
-      POSTGRES_PASSWORD: foodpw
+      POSTGRES_USER: <TBD>
+      POSTGRES_PASSWORD: <TBD>
       POSTGRES_DB: foodtruck
     ports:
       - "5432:5432"
