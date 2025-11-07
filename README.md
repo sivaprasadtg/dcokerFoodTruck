@@ -20,6 +20,9 @@ Each service is built using Node.js, Express.js, and PostgreSQL, with full conta
 | **kubectl**            | ≥ 1.30  | Manage Kubernetes resources    |
 | **Postman / curl**     | –       | API testing                    |
 | **Node.js (optional)** | ≥ 18.x  | Local testing without Docker   |
+  
+If you need to run the postgresql db locally you need to install it and create DB with tables followed by update .env files with db user creds.  
+This is not required if docker/K8s is used.
 
 #### Enable Kubernetes in Docker Desktop under Settings → Kubernetes → Enable Kubernetes.
 
