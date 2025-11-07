@@ -21,12 +21,32 @@ Each service is built using Node.js, Express.js, and PostgreSQL, with full conta
 | **Postman / curl**     | –       | API testing                    |
 | **Node.js (optional)** | ≥ 18.x  | Local testing without Docker   |
 
+If you need to run the postgresql db locally you need to install it and create DB with tables followed by update .env files with db user creds.  
+This is not required if docker/K8s is used.
+
 #### Enable Kubernetes in Docker Desktop under Settings → Kubernetes → Enable Kubernetes.
 
 ## Running Locally (Docker Compose)
 
 Clone the repository
 'https://github.com/sivaprasadtg/dockerFoodTruck.git'
+
+## Environment variables (.env)
+
+Create these files (do not commit them):
+
+**src/menu-service/.env**  
+**src/order-service/.env**
+
+These env files could look like, for eg:
+
+> PORT=3000  
+DB_HOST=localhost  
+DB_PORT=5432  
+DB_USER=******  
+DB_PASSWORD=******  
+DB_NAME=foodtruck
+
 
 ### Start all services and verify
 ``` docker compose up --build ```  

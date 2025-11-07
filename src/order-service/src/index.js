@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const axios = require('axios');
 const { Pool } = require('pg');
@@ -6,15 +7,15 @@ const app = express();
 app.use(express.json());
 
 // Config
-const MENU_URL = process.env.MENU_URL || 'http://localhost:3000';
+const MENU_URL = process.env.MENU_URL;
 
 // Shared Postgres pool
 const pool = new Pool({
-  host: process.env.DB_HOST || 'localhost',
-  port: Number(process.env.DB_PORT || 5432),
-  user: process.env.DB_USER || 'food',
-  password: process.env.DB_PASSWORD || 'foodpw',
-  database: process.env.DB_NAME || 'foodtruck'
+  host: process.env.DB_HOST,
+  port: Number(process.env.DB_PORT),
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME
 });
 
 // health
@@ -212,9 +213,10 @@ app.put('/orders/:id', async (req, res) => {
   }
 });
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT;
+console.log( `port for order service ${process.env.PORT} `);
 app.listen(PORT, () => {
   console.log(
-    `Order-service running on port ${PORT}, MENU_URL=${process.env.MENU_URL}, DB=${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`
+    `Order-service running on port ${PORT}, MENU_URL=${MENU_URL}, DB=${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`
   );
 });
