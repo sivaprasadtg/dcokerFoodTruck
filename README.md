@@ -24,9 +24,6 @@ Each service is built using Node.js, Express.js, and PostgreSQL, with full conta
 If you need to run the postgresql db locally you need to install it and create DB with tables followed by update .env files with db user creds.  
 This is not required if docker/K8s is used.
 
-If you need to run the postgresql db locally you need to install it and create DB with tables followed by update .env files with db user creds.  
-This is not required if docker/K8s is used.
-
 #### Enable Kubernetes in Docker Desktop under Settings → Kubernetes → Enable Kubernetes.
 
 ## Running Locally (Docker Compose)
