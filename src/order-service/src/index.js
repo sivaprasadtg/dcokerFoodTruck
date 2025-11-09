@@ -9,13 +9,22 @@ app.use(express.json());
 // Config
 const MENU_URL = process.env.MENU_URL;
 
+// small helper: require critical envs in non-dev
+function reqEnv(name) {
+  const v = process.env[name];
+  if (!v && process.env.NODE_ENV === 'production') {
+    throw new Error(`Missing required env: ${name}`);
+  }
+  return v;
+}
+
 // Shared Postgres pool
 const pool = new Pool({
-  host: process.env.DB_HOST,
-  port: Number(process.env.DB_PORT),
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME
+  host: process.env.DB_HOST || 'localhost',
+  port: Number(process.env.DB_PORT || 5432),
+  user: reqEnv('DB_USER'), //process.env.DB_USER,
+  password: reqEnv('DB_PASSWORD'), //process.env.DB_PASSWORD,
+  database: process.env.DB_NAME || 'foodtruck'
 });
 
 // health
@@ -213,7 +222,7 @@ app.put('/orders/:id', async (req, res) => {
   }
 });
 
-const PORT = process.env.PORT;
+const PORT = Number(process.env.PORT || 4000);
 console.log( `port for order service ${process.env.PORT} `);
 app.listen(PORT, () => {
   console.log(

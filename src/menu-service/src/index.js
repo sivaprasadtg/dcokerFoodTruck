@@ -6,13 +6,22 @@ const { Pool } = require('pg');
 const app = express();
 app.use(express.json());
 
+// small helper: require critical envs in non-dev
+function reqEnv(name) {
+  const v = process.env[name];
+  if (!v && process.env.NODE_ENV === 'production') {
+    throw new Error(`Missing required env: ${name}`);
+  }
+  return v;
+}
+
 // Configuration
 const pool = new Pool({
-  host: process.env.DB_HOST,
-  port: Number(process.env.DB_PORT),
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME
+  host: process.env.DB_HOST || 'localhost',
+  port: Number(process.env.DB_PORT || 5432),
+  user: reqEnv('DB_USER'), //process.env.DB_USER,
+  password: reqEnv('DB_PASSWORD'), //process.env.DB_PASSWORD,
+  database: process.env.DB_NAME || 'foodtruck'
 });
 
 // simple request logger to see incoming method & path
@@ -108,7 +117,7 @@ app.delete('/menu/:id', async (req, res) => {
   }
 });
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT  || 3000;
 
 app.listen(PORT, () =>
   console.log(`menu-service running on port ${PORT}`)

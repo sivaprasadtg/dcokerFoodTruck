@@ -15,11 +15,13 @@ spec:
     spec:
       containers:
         - name: menu
-          image: sivaprasadtg/menu-service:v1
+          image: sivaprasadtg/menu-service:v2
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 3000
           env:
+            - name: PORT
+              value: "3000"
             - name: DB_USER
               valueFrom:
                 secretKeyRef:
