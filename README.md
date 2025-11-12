@@ -58,8 +58,8 @@ MENU_URL=http://localhost:3000
 NODE_ENV=development
 
 ### Start all services and verify
-``` docker compose up --build ```  
-``` docker ps ```
+```docker compose up --build ```  
+```docker ps ```
 
 You should see foodtruck-menu, order-service, and postgres running.
 
@@ -73,7 +73,7 @@ You should see foodtruck-menu, order-service, and postgres running.
 | Create order  | POST   | `http://localhost:4000/orders` |
 
 ### Stop services
-``` docker compose down -v```
+```docker compose down -v```
 
 ## Running on Kubernetes
 
@@ -82,11 +82,11 @@ You should see foodtruck-menu, order-service, and postgres running.
 
 ### Create Secrets from .env.k8s & ConfigMap for DB  
 ```kubectl delete secret db-secret -n foodtruck --ignore-not-found```  
-```kubectl create secret generic db-secret -n foodtruck --from-env-file=.env.k8s -n foodtruck```    
-``` kubectl apply -n foodtruck -f k8s/db-init-configmap.yaml```  
+```kubectl create secret generic db-secret -n foodtruck --from-env-file=.env.k8s --dry-run=client -o yaml > k8s/secret-db.yaml```     will create the secret under k8s, which can then be applied as:  
+```kubectl apply -n foodtruck -f k8s/secret-db.yaml```  
 
-# TO BE REMOVED:
-``` kubectl apply -n foodtruck -f k8s/secret-db.yaml```  
+For DB config map:  
+```kubectl apply -n foodtruck -f k8s/db-init-configmap.yaml```  
 
 ### Deploy PostgreSQL and get all pods
 ```kubectl apply -n foodtruck -f k8s/postgres.yaml```  
