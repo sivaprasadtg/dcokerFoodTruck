@@ -55,6 +55,12 @@ async function nextOrderId(client) {
   return `${key}-${pad(val)}`;
 }
 
+// Function to validate order ID format
+function isValidOrderId(id) {
+  // Matches YYYYMMDD-#### (e.g., 20251112-0001)
+  return /^\d{8}-\d{4}$/.test(id);
+}
+
 // POST /orders (create)
 app.post('/orders', async (req, res) => {
   const client = await pool.connect();
@@ -145,6 +151,10 @@ app.get('/orders', async (req, res) => {
 
 // GET /orders/:id
 app.get('/orders/:id', async (req, res) => {
+  const id = req.params.id;
+  if (!isValidOrderId(id)) {
+    return res.status(400).json({ error: 'Invalid order ID format (must be YYYYMMDD-####)' });
+  }
   try {
     const restCall4 = await pool.query('SELECT * FROM orders WHERE id = $1', [req.params.id]);
     if (restCall4.rowCount === 0) return res.status(404).json({ error: 'Not found' });
@@ -167,6 +177,10 @@ app.get('/orders/:id', async (req, res) => {
 
 // PUT /orders/:id (partial update)
 app.put('/orders/:id', async (req, res) => {
+  const id = req.params.id;
+  if (!isValidOrderId(id)) {
+    return res.status(400).json({ error: 'Invalid order ID format (must be YYYYMMDD-####)' });
+  }
   try {
     const orderId = req.params.id;
     const { items, paymentMethod, status } = req.body;
