@@ -1,6 +1,6 @@
 require('dotenv').config();
 const express = require('express');
-const { v4: uuidv4 } = require('uuid');
+const { v4: uuidv4 , validate: uuidValidate } = require('uuid');
 const { Pool } = require('pg');
 
 const app = express();
@@ -46,6 +46,10 @@ app.get('/menu', async (_req, res) => {
 
 // Get single item
 app.get('/menu/:id', async (req, res) => {
+  const id = req.params.id;
+  if (!uuidValidate(id)) {
+    return res.status(400).json({error: 'Invalid menu ID (must be UUID)'});
+  }
   try {
     const result = await pool.query('SELECT * FROM menu WHERE id = $1', [req.params.id]);
     if (result.rowCount === 0) return res.status(404).json({ error: 'Item not found.' });
@@ -80,6 +84,10 @@ app.post('/menu', async (req, res) => {
 
 // Update existing item
 app.put('/menu/:id', async (req, res) => {
+  const id = req.params.id;
+  if (!uuidValidate(id)) {
+    return res.status(400).json({error: 'Invalid menu ID (must be UUID)'});
+  }
   try {
     const { name, price, available } = req.body;
     const id = req.params.id;
