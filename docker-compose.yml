@@ -8,8 +8,8 @@ services:
     environment:
       DB_HOST: db
       DB_PORT: "5432"
-      DB_USER: <TBD>
-      DB_PASSWORD: <TBD>
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
       DB_NAME: foodtruck
     ports:
       - "3000:3000"
@@ -27,8 +27,8 @@ services:
       MENU_URL: http://menu:3000
       DB_HOST: db
       DB_PORT: "5432"
-      DB_USER: <TBD>
-      DB_PASSWORD: <TBD>
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
       DB_NAME: foodtruck
     ports:
       - "4000:4000"
@@ -41,8 +41,8 @@ services:
     image: postgres:18
     container_name: foodtruck-db
     environment:
-      POSTGRES_USER: <TBD>
-      POSTGRES_PASSWORD: <TBD>
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
       POSTGRES_DB: foodtruck
     ports:
       - "5432:5432"
