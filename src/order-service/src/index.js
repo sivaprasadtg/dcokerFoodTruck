@@ -18,19 +18,7 @@ function reqEnv(name) {
   return v;
 }
 
-// Shared Postgres pool
-const pool = new Pool({
-  host: process.env.DB_HOST || 'localhost',
-  port: Number(process.env.DB_PORT || 5432),
-  user: reqEnv('DB_USER'), //process.env.DB_USER,
-  password: reqEnv('DB_PASSWORD'), //process.env.DB_PASSWORD,
-  database: process.env.DB_NAME || 'foodtruck'
-});
-
-// health
-app.get('/orders/health', (_req, res) => res.sendStatus(200));
-
-// helpers
+// Generte current date in YYYMMDD format
 const pad = (n, width = 4) => String(n).padStart(width, '0');
 const todayKey = () => {
   const d = new Date();
@@ -60,6 +48,24 @@ function isValidOrderId(id) {
   // Matches YYYYMMDD-#### (e.g., 20251112-0001)
   return /^\d{8}-\d{4}$/.test(id);
 }
+
+// Shared Postgres pool
+const pool = new Pool({
+  host: process.env.DB_HOST || 'localhost',
+  port: Number(process.env.DB_PORT || 5432),
+  user: reqEnv('DB_USER'), //process.env.DB_USER,
+  password: reqEnv('DB_PASSWORD'), //process.env.DB_PASSWORD,
+  database: process.env.DB_NAME || 'foodtruck'
+});
+
+// simple request logger to see incoming method & path
+app.use((req, res, next) => {
+  console.log(new Date().toISOString(), req.method, req.path, 'body=', req.body);
+  next();
+});
+
+// health
+app.get('/orders/health', (_req, res) => res.sendStatus(200));
 
 // POST /orders (create)
 app.post('/orders', async (req, res) => {
@@ -117,6 +123,13 @@ app.post('/orders', async (req, res) => {
   } finally {
     client.release();
   }
+});
+
+// Reject POST /orders/:anyId
+app.post('/orders/:id', (req, res) => {
+  return res.status(405).json({
+    error: 'Do not specify an ID when creating orders. Use POST /orders instead.'
+  });
 });
 
 // GET /orders (list; optional ?customerId=)
