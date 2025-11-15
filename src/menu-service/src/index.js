@@ -82,6 +82,13 @@ app.post('/menu', async (req, res) => {
   }
 });
 
+// Reject POST /menu/:anyId
+app.post('/menu/:id', (req, res) => {
+  return res.status(405).json({
+    error: 'Do not specify an ID when creating menu items. Use POST /menu instead.'
+  });
+});
+
 // Update existing item
 app.put('/menu/:id', async (req, res) => {
   const id = req.params.id;
